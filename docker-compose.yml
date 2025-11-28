@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:5.0
+    container_name: colorsense_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./server
+    container_name: colorsense_backend
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/colorsense
+    depends_on:
+      - mongo
+    volumes:
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./client:/usr/src/client 
+      # Mounting client to allow simple hot-reload of static files if needed, 
+      # though app.js points to relative path '../client' which is now '/usr/src/client' inside container logic?
+      # Dockerfile copies current dir (.) to /usr/src/app. 
+      # The app.js expects '../client'.
+      # So inside the container:
+      # /usr/src/app (server code)
+      # /usr/src/client (client code)
+
+volumes:
+  mongo_data:
+

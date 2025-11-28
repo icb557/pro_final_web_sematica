@@ -1,0 +1,158 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.controls {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #444;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.controls label {
+    margin-right: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.visual-element-container {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.simulated-image {
+    border: 2px solid #ccc;
+    position: relative; /* For absolute text positioning */
+    margin-bottom: 1rem;
+}
+
+.data-chart {
+    display: flex;
+    align-items: flex-end;
+    height: 200px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    padding: 1rem;
+    gap: 20px;
+}
+
+.bar {
+    width: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    transition: background-color 0.5s ease;
+}
+
+.semantic-description {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e9ecef;
+    border-left: 4px solid #007bff;
+    font-style: italic;
+    display: none; /* Hidden by default until adapted */
+}
+
+.semantic-description.visible {
+    display: block;
+}
+
+.chart-legend span {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+/* Rainbow Spectrum Styles */
+.rainbow-spectrum {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to right, 
+        #FF0000, /* Red */
+        #FFA500, /* Orange */
+        #FFFF00, /* Yellow */
+        #00FF00, /* Green */
+        #00FFFF, /* Cyan */
+        #0000FF, /* Blue */
+        #4B0082, /* Indigo */
+        #800080, /* Violet */
+        #FFC0CB, /* Pink */
+        #A52A2A  /* Brown */
+    );
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    transition: filter 0.5s ease;
+}
+
+.color-blocks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.color-block {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    color: white;
+    text-shadow: 0 0 2px black;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Informative Article Styles */
+.info-article {
+    line-height: 1.8;
+    color: #444;
+}
+
+.info-article h4 {
+    color: #007bff;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}

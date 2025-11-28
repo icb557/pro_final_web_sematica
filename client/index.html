@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Sense - Adaptación para Daltonismo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Color Sense</h1>
+        <p>Una experiencia web adaptativa para personas con daltonismo</p>
+        
+        <div class="controls">
+            <label for="daltonismType">Tipo de Daltonismo:</label>
+            <select id="daltonismType">
+                <option value="none">Sin Adaptación</option>
+                <option value="protanopia">Protanopia (Ceguera al Rojo)</option>
+                <option value="deuteranopia">Deuteranopia (Ceguera al Verde)</option>
+                <option value="tritanopia">Tritanopia (Ceguera al Azul)</option>
+            </select>
+            <button id="applyAdaptation">Aplicar Adaptación</button>
+            <button id="seedDb" style="margin-left: 10px; background-color: #555;">Restaurar Datos (Seed)</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="content">
+            <h2>Ejemplos de Contenido Visual</h2>
+            
+            <!-- Example Image -->
+            <div class="visual-element-container">
+                <h3>Imagen: Semáforo</h3>
+                <div class="image-wrapper">
+                    <!-- Placeholder for an image. Using a colored div to simulate an image for simplicity if file missing -->
+                    <div id="img1" class="simulated-image" data-id="img1" style="background: linear-gradient(to right, #FF0000 33%, #FFFF00 33%, #FFFF00 66%, #00FF00 66%); width: 300px; height: 150px;">
+                        <!-- Visual representation of Red, Yellow, Green -->
+                        <span style="position:absolute; top:10px; left:10px; color:white; font-weight:bold; text-shadow: 1px 1px 2px black;">Rojo</span>
+                        <span style="position:absolute; top:10px; left:110px; color:black; font-weight:bold;">Amarillo</span>
+                        <span style="position:absolute; top:10px; left:210px; color:white; font-weight:bold; text-shadow: 1px 1px 2px black;">Verde</span>
+                    </div>
+                    <p class="caption">Un semáforo simulado con colores estándar.</p>
+                </div>
+                <div id="desc-img1" class="semantic-description"></div>
+            </div>
+
+            <!-- Example Chart -->
+            <div class="visual-element-container">
+                <h3>Gráfico: Ventas Trimestrales</h3>
+                <div id="chart1" class="data-chart" data-id="chart1">
+                    <div class="bar" data-label="Q1" data-color="#FF0000" style="height: 100px; background-color: #FF0000;">Q1</div>
+                    <div class="bar" data-label="Q2" data-color="#00FF00" style="height: 150px; background-color: #00FF00;">Q2</div>
+                    <!-- NEW BARS -->
+                    <div class="bar" data-label="Q3" data-color="#FFFF00" style="height: 120px; background-color: #FFFF00; color: #333; text-shadow: none;">Q3</div>
+                    <div class="bar" data-label="Q4" data-color="#0000FF" style="height: 180px; background-color: #0000FF;">Q4</div>
+                </div>
+                <div id="chartLegend" class="chart-legend"></div>
+                <div id="desc-chart1" class="semantic-description"></div>
+            </div>
+
+            <!-- NEW: Informative Article -->
+            <div class="visual-element-container">
+                <h3>Artículo: La Importancia del Color en la Web</h3>
+                <article class="info-article">
+                    <p>El color es una de las herramientas más poderosas en el diseño web. No solo define la estética de un sitio, sino que guía la atención del usuario, evoca emociones y facilita la navegación.</p>
+                    
+                    <h4>Accesibilidad y Daltonismo</h4>
+                    <p>Sin embargo, para el 8% de la población masculina, distinguir ciertos colores es un desafío. El diseño inclusivo no significa evitar el color, sino utilizarlo con <strong>semántica</strong> y proporcionar alternativas.</p>
+                    
+                    <p>Herramientas como <em>Color Sense</em> permiten reinterpretar estos valores cromáticos en tiempo real, asegurando que la información (como la del gráfico superior) no se pierda.</p>
+                </article>
+            </div>
+
+            <!-- Example Rainbow Palette -->
+            <div class="visual-element-container">
+                <h3>Paleta de Colores Completa</h3>
+                <div class="image-wrapper">
+                    <!-- CSS Linear Gradient to represent the rainbow -->
+                    <div id="rainbow1" class="rainbow-spectrum" data-id="rainbow1"></div>
+                    <p class="caption">Espectro completo de colores.</p>
+                </div>
+                <!-- Color blocks to show specific mapping clearly -->
+                <div id="rainbow1-blocks" class="color-blocks-container">
+                    <!-- Will be populated by JS for clarity if needed, or we stick to the gradient -->
+                </div>
+                <div id="desc-rainbow1" class="semantic-description"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Container for dynamic SVG filters -->
+    <div id="svgFiltersContainer" style="height: 0; overflow: hidden;"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
